@@ -1,14 +1,15 @@
-# Visual Studio Temporary Files and Folders
+﻿# Cấu hình cục bộ Visual Studio (VS)
 .vs/
-*.vsidx
 
-# Other common temporary files to ignore (for VS projects)
-# Binary / Object files
+# Thư mục build và output
+[Bb]in/
+[Oo]bj/
 [Dd]ebug/
 [Rr]elease/
 
-# Packages
-**/packages/*
+# Thư mục chứa tệp .exe lớn gây lỗi
+publish/
 
-# Logs and other files
-*.log
+# Các tệp cache và metadata khác
+*.user
+*.suo

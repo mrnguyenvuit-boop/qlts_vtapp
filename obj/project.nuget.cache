@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "k6dLybrLNIQ=",
+  "success": true,
+  "projectFilePath": "D:\\QLGDTS\\VTApp\\ClientPrinterTray.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hi\\.nuget\\packages\\dapper\\2.1.21\\dapper.2.1.21.nupkg.sha512",
+    "C:\\Users\\Hi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Hi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Hi\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.1\\microsoft.net.illink.tasks.9.0.1.nupkg.sha512",
+    "C:\\Users\\Hi\\.nuget\\packages\\npgsql\\8.0.3\\npgsql.8.0.3.nupkg.sha512",
+    "C:\\Users\\Hi\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\9.0.1\\microsoft.aspnetcore.app.runtime.win-x64.9.0.1.nupkg.sha512",
+    "C:\\Users\\Hi\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\9.0.1\\microsoft.windowsdesktop.app.runtime.win-x64.9.0.1.nupkg.sha512",
+    "C:\\Users\\Hi\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\9.0.1\\microsoft.netcore.app.runtime.win-x64.9.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

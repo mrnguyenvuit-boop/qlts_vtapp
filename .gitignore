@@ -1,0 +1,14 @@
+# Visual Studio Temporary Files and Folders
+.vs/
+*.vsidx
+
+# Other common temporary files to ignore (for VS projects)
+# Binary / Object files
+[Dd]ebug/
+[Rr]elease/
+
+# Packages
+**/packages/*
+
+# Logs and other files
+*.log

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace ClientPrinterTray
 {
@@ -6,7 +6,10 @@ namespace ClientPrinterTray
     public class JobItem
     {
         public string JobId { get; set; } = Guid.NewGuid().ToString("N");
-        public string FilePath { get; set; } = "";
+
+        // 🔥 Thêm nhiều file
+        public List<string> Files { get; set; } = new();
+
         public string Printer { get; set; } = "";
         public JobState State { get; private set; } = JobState.Pending;
         public DateTime Created { get; set; } = DateTime.Now;
@@ -26,6 +29,7 @@ namespace ClientPrinterTray
             Error = error;
         }
     }
+
     public enum JobState
     {
         Pending,

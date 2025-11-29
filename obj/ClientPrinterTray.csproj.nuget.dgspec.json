@@ -55,11 +55,19 @@
               "target": "Package",
               "version": "[2.1.21, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.7.3, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.1, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.4, )"
             },
             "Npgsql": {
               "target": "Package",

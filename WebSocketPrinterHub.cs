@@ -13,27 +13,29 @@ namespace ClientPrinterTray
             _queue = queue;
         }
 
-        public async Task HandleConnection(WebSocket ws)
+        private async Task HandleConnection(WebSocket ws)
         {
             byte[] buffer = new byte[4096];
 
             while (ws.State == WebSocketState.Open)
             {
                 var result = await ws.ReceiveAsync(buffer, CancellationToken.None);
-
-                if (result.CloseStatus.HasValue)
-                    break;
+                if (result.CloseStatus.HasValue) break;
 
                 string json = Encoding.UTF8.GetString(buffer, 0, result.Count);
 
-                // 🔥 JSON từ web → convert thành JOB
-                JobItem? job = JsonSerializer.Deserialize<JobItem>(json);
+                var job = System.Text.Json.JsonSerializer.Deserialize<JobItem>(json);
 
-                if (job != null)
-                    await _queue.EnqueueAsync(job);  // đưa vào hàng đợi in
+                if (job != null && job.Files?.Count > 0)
+                    await _queue.EnqueueAsync(job.Files);  // ✔ giờ chạy được
             }
 
-            await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "", CancellationToken.None);
+            await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closed", CancellationToken.None);
+        }
+
+        private class PrintCommand
+        {
+            public List<string>? files { get; set; }
         }
     }
 }

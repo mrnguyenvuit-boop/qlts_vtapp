@@ -12,38 +12,37 @@ namespace ClientPrinterTray
         private static string ExePath =>
             Path.Combine(AppContext.BaseDirectory, "SumatraPDF.exe");
 
-        public static void PrintSilent(string file, string? printerName)
-        {
-            if (!File.Exists(ExePath))
-            {
-                MessageBox.Show(
-                    $"Không tìm thấy SumatraPDF.exe tại:\n{ExePath}",
-                    "Lỗi in PDF",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-                return; // ⬅️ Đừng throw nữa, để app không văng
-            }
+		public static async Task<bool> PrintSilentAsync(string file, string? printerName)
+		{
+			if (!File.Exists(file))
+				throw new Exception($"File không tồn tại: {file}");
 
-            if (string.IsNullOrWhiteSpace(printerName))
-            {
-                // Nếu chưa chọn thì dùng máy in mặc định của Windows
-                printerName = new PrinterSettings().PrinterName;
-            }
+			if (!File.Exists(ExePath))
+				throw new Exception("Không tìm thấy SumatraPDF.exe");
 
-            var psi = new ProcessStartInfo
-            {
-                FileName = ExePath,
-                Arguments = $"-print-to \"{printerName}\" -silent \"{file}\"",
-                UseShellExecute = false,
-                CreateNoWindow = true,
-                WindowStyle = ProcessWindowStyle.Hidden
-            };
+			if (string.IsNullOrWhiteSpace(printerName))
+				printerName = new PrinterSettings().PrinterName;
 
-            Process.Start(psi);
-        }
+			var psi = new ProcessStartInfo
+			{
+				FileName = ExePath,
+				Arguments = $"-print-to \"{printerName}\" -silent \"{file}\"",
+				UseShellExecute = false,
+				CreateNoWindow = true,
+				RedirectStandardOutput = true,
+				RedirectStandardError = true
+			};
 
-        public static string[] GetPrinters()
+			using var process = Process.Start(psi)!;
+
+			// ⏳ CHỜ 3–6s CHO SUMATRA XỬ LÝ PDF RỒI EXIT
+			await Task.Run(() => process.WaitForExit(6000));
+
+			return process.HasExited;
+		}
+
+
+		public static string[] GetPrinters()
         {
             var list = new string[PrinterSettings.InstalledPrinters.Count];
             PrinterSettings.InstalledPrinters.CopyTo(list, 0);

@@ -180,7 +180,7 @@ namespace ClientPrinterTray
         }
 
         //================ TEST PRINT ==================
-        private void btnTestPrint_Click(object sender, EventArgs e)
+        private async void btnTestPrint_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(_settings.DefaultPrinter))
             {
@@ -191,7 +191,7 @@ namespace ClientPrinterTray
             var pdf = Path.Combine(Path.GetTempPath(), "test_print.pdf");
             File.WriteAllBytes(pdf, Convert.FromBase64String(TEST_PDF_BASE64));
 
-            Printer.PrintSilent(pdf, _settings.DefaultPrinter);
+            await  Printer.PrintSilentAsync(pdf, _settings.DefaultPrinter);
             MessageBox.Show("Đã gửi lệnh in Test PDF!");
         }
 

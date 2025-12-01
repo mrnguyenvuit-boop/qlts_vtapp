@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\QLGDTS\\VTApp\\ClientPrinterTray.csproj": {}
+    "C:\\Users\\PC\\source\\repos\\mrnguyenvuit-boop\\qlts_vtapp\\ClientPrinterTray.csproj": {}
   },
   "projects": {
-    "D:\\QLGDTS\\VTApp\\ClientPrinterTray.csproj": {
+    "C:\\Users\\PC\\source\\repos\\mrnguyenvuit-boop\\qlts_vtapp\\ClientPrinterTray.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\QLGDTS\\VTApp\\ClientPrinterTray.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\mrnguyenvuit-boop\\qlts_vtapp\\ClientPrinterTray.csproj",
         "projectName": "ClientPrinterTray",
-        "projectPath": "D:\\QLGDTS\\VTApp\\ClientPrinterTray.csproj",
-        "packagesPath": "C:\\Users\\Hi\\.nuget\\packages\\",
-        "outputPath": "D:\\QLGDTS\\VTApp\\obj\\",
+        "projectPath": "C:\\Users\\PC\\source\\repos\\mrnguyenvuit-boop\\qlts_vtapp\\ClientPrinterTray.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\source\\repos\\mrnguyenvuit-boop\\qlts_vtapp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +28,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -43,7 +46,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -62,7 +65,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.1, )",
+              "version": "[9.0.0, )",
               "autoReferenced": true
             },
             "Newtonsoft.Json": {
@@ -88,15 +91,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[9.0.1, 9.0.1]"
+              "version": "[9.0.0, 9.0.0]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[9.0.1, 9.0.1]"
+              "version": "[9.0.0, 9.0.0]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[9.0.1, 9.0.1]"
+              "version": "[9.0.0, 9.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -110,7 +113,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
